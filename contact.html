@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Contact</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Placeholder -->
+    <div id="nav-placeholder"></div>
+
+    <!-- Contact Section -->
+    <main class="content-section full-width">
+        <!-- <div class="section-header"> -->
+            <!-- <h1 class="section-title">Contact</h1> -->
+            <!-- <p class="section-subtitle">
+                Thanks for viewing my websites, if you have any suggestions please use the form below to send me messages.
+                As a rising senior, I am actively looking for job opportunities in technology and related field.
+                I have included a form to send me messages, with contact information and types of jobs with my primary interest.
+            </p>
+        </div> -->
+
+        <div class="cards-grid">
+            <div class="card">
+                <h3 class="card-title">Get In Touch</h3>
+                <div class="card-content">
+                    <form class="contact-form" action="https://formsubmit.co/jm5912@columbia.edu" method="POST">
+                        <!-- FormSubmit Configuration -->
+                        <input type="hidden" name="_subject" value="New Contact Form Submission">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        
+                        <div class="form-group">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" name="name" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" name="email" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" name="subject" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea name="message" class="form-textarea" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="info-section">
+                    <h3 class="card-title">Contact Information</h3>
+                    <div class="card-content">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope contact-icon"></i>
+                            <div class="contact-details">
+                                <strong>Academic Email</strong>
+                                <a href="mailto:jm5912@columbia.edu" class="contact-link">jm5912@columbia.edu</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope contact-icon"></i>
+                            <div class="contact-details">
+                                <strong>Personal Email</strong>
+                                <a href="mailto:charliemei1112@gmail.edu" class="contact-link">charliemei1112@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-section">
+                    <h3 class="card-title">Professional Networks</h3>
+                    <div class="card-content">
+                        <div class="social-section">
+                            <div class="social-item">
+                                <a href="https://linkedin.com/in/junyi-mei-013132234/" class="social-link-enhanced" target="_blank">
+                                    <i class="fab fa-linkedin"></i>
+                                    <div class="social-info">
+                                        <strong>LinkedIn</strong>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="social-item">
+                                <a href="https://github.com/Charliemei1112" class="social-link-enhanced" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                    <div class="social-info">
+                                        <strong>GitHub</strong>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-section">
+                    <h3 class="card-title">Areas of Interest</h3>
+                    <div class="card-content">
+                        <p class="interest-intro">I am actively seeking opportunities in (but not limited to):</p>
+                        <div class="interest-list">
+                            <div class="interest-item">
+                                <span>Software Engineer</span>
+                            </div>
+                            <div class="interest-item">
+                                <span>Digital Circuit Design</span>
+                            </div>
+                            <div class="interest-item">
+                                <span>Embedded Systems Engineer</span>
+                            </div>
+                            <div class="interest-item">
+                                <span>Machine Learning Engineer</span>
+                            </div>
+                            <div class="interest-item">
+                                <span>Quantitative Researcher</span>
+                            </div>
+                            <div class="interest-item">
+                                <span>Hardware Engineer (FPGA, ASIC)</span>
+                            </div>
+                            <div class="interest-item">
+                                <span>Data Engineer</span>
+                            </div>
+                            <div class="interest-item">
+                                <span>System Verification</span>
+                            </div>
+                        </div>
+                        <!-- <div class="availability-note">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Open to internships, full-time positions, and collaborative projects</span>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+
+        
+        </div>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <script src="script.js"></script>
+    <script>
+        // Email fallback button
+        document.getElementById('emailFallback').addEventListener('click', function() {
+            // Get form data for mailto link
+            const name = document.querySelector('input[name="name"]').value;
+            const email = document.querySelector('input[name="email"]').value;
+            const subject = document.querySelector('input[name="subject"]').value;
+            const message = document.querySelector('textarea[name="message"]').value;
+            
+            // Create mailto link
+            const mailtoLink = `mailto:jm5912@columbia.edu?subject=${encodeURIComponent(subject || 'Contact Form Message')}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+            
+            // Open email client
+            window.location.href = mailtoLink;
+        });
+    </script>
+</body>
+</html> 
+                

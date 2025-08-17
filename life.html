@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Life</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Placeholder -->
+    <div id="nav-placeholder"></div>
+
+    <!-- Life Section -->
+    <main class="life-content">
+
+        <!-- Music Section -->
+        <section class="life-poster music-poster">
+            <div class="life-box">
+                <div class="music-carousel-container">
+                    <button class="carousel-arrow carousel-arrow-left" onclick="musicCarousel.prev()">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    
+                    <div class="music-carousel">
+                        <div class="carousel-track">
+                            <!-- Slide 1: Music General -->
+                            <div class="carousel-slide active">
+                                <div class="poster-container">
+                                    <div class="poster-text">
+                                        <h1 class="poster-title">Music</h1>
+                                        <!-- <p class="poster-subtitle">Columbia University Chinese A Cappella (CUCAC)</p> -->
+                                        <div class="poster-description">
+                                            <!-- <p>Performing with Columbia University Chinese A Cappella has been one of my most rewarding musical experiences.</p>
+                                            <p>Here's a performance of "In The Stone" showcasing our group's harmony and vocal arrangements.</p> -->
+                                        </div>
+                                    </div>
+                                    <div class="poster-media">
+                                        <div class="media-placeholder">
+                                            <video controls width="100%">
+                                                <source src="../videos/InTheStone.mp4" type="video/mp4">
+                                                Your browser does not support the video tag.
+                                            </video>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Slide 2: Georgetown Superfood -->
+                            <div class="carousel-slide">
+                                <div class="poster-container">
+                                    <div class="poster-text">
+                                        <h1 class="poster-title">Georgetown Superfood A Cappella</h1>
+                                        <p class="poster-subtitle">College A Cappella Experience</p>
+                                        <div class="poster-description">
+                                            <p>My musical journey began with Georgetown Superfood Acappella, where I learned the fundamentals of group singing.</p>
+                                            <p>This experience taught me collaboration, timing, and the importance of blending voices to create harmony.</p>
+                                        </div>
+                                    </div>
+                                    <div class="poster-media">
+                                        <div class="media-placeholder">
+                                            <p>Georgetown A Cappella photos and videos will go here</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Slide 3: Musical Philosophy -->
+                            <div class="carousel-slide">
+                                <div class="poster-container">
+                                    <div class="poster-text">
+                                        <h1 class="poster-title">Musical Philosophy</h1>
+                                        <p class="poster-subtitle">Music as Creative Expression</p>
+                                        <div class="poster-description">
+                                            <p>Music provides a creative outlet that complements my technical studies in computer engineering.</p>
+                                            <p>The precision required in music mirrors the attention to detail needed in programming and engineering.</p>
+                                        </div>
+                                    </div>
+                                    <div class="poster-media">
+                                        <div class="media-placeholder">
+                                            <p>Musical philosophy images and content will go here</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="carousel-arrow carousel-arrow-right" onclick="musicCarousel.next()">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                
+                <!-- Carousel Indicators -->
+                <div class="carousel-indicators">
+                    <span class="indicator active" onclick="musicCarousel.goTo(0)"></span>
+                    <span class="indicator" onclick="musicCarousel.goTo(1)"></span>
+                    <span class="indicator" onclick="musicCarousel.goTo(2)"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sports Section -->
+        <section class="life-poster sports-poster">
+            <div class="life-box">
+                <div class="poster-container">
+                    <div class="poster-text">
+                        <h1 class="poster-title">Sports</h1>
+                        <p class="poster-subtitle">Athletic Pursuits and Active Lifestyle</p>
+                        <div class="poster-description">
+                            <p>Staying active and competitive through various sports and fitness activities.</p>
+                            <p>From team sports to individual training, athletics has taught me discipline, teamwork, and perseverance.</p>
+                        </div>
+                    </div>
+                    <div class="poster-media">
+                        <div class="media-placeholder">
+                            <p>Sports images and videos will go here</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Personal Section -->
+        <section class="life-poster personal-poster">
+            <div class="life-box">
+                <div class="poster-container">
+                    <div class="poster-text">
+                        <h1 class="poster-title">Personal</h1>
+                        <p class="poster-subtitle">Hobbies, Interests, and Life Philosophy</p>
+                        <div class="poster-description">
+                            <p>Beyond academics and work, I enjoy gaming, technology exploration, and continuous learning.</p>
+                            <p>I believe in maintaining a balance between professional growth and personal fulfillment.</p>
+                        </div>
+                    </div>
+                    <div class="poster-media">
+                        <div class="media-placeholder">
+                            <p>Personal images and videos will go here</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
