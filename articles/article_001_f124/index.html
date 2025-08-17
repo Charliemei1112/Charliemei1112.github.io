@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1 24 Time Trial: Testing Every Constructor's Performance</title>
+    <!-- <link rel="stylesheet" href="articles.css"> -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Placeholder -->
+    <div id="nav-placeholder"></div>
+
+    <!-- Article Content -->
+    <main class="content-section">
+        <!-- Article Header -->
+        <div class="article-header">
+            <h1 class="article-title-main">F1 24 Time Trial: Testing Every Constructor's Performance</h1>
+        </div>
+
+        <!-- Article Content -->
+        <div class="article-content">
+        
+            <div class="article-section">
+                <h2>Introduction</h2>
+                <p>
+                    As a F1 fan, the most realistic and cost-effective hand-on experience I can acquire is by playing F1 simulators.
+                    Therefore, I have been playing F1 24, developed by Codemasters and published by EA Sports, for a couple month.
+                    As one of the most popular F1 simnulating games, F1 24 has been able to provide me with a realistic and immersive experience.
+                    By helping me understand the physicality of the cars on the tracks, and the dynamics of the regulations I have to follow throughout the race.
+                </p>
+                
+                <p>
+                    Though far enough from being a real F1 driver, the game still manages to simulate the physicality of the cars.
+                    And one of the implications is the difference in each constructor's performance.
+                    Whether you are playing Career mode or F1 world, choosing different cars will have a significant impact on your performance.
+                </p>
+
+                
+                <p>
+                    But how are these cars different from each other? 
+                    To figure this out, I will be driving each car in time trial mode at Baurhin Grand Prix.
+                    The game will be recorded and the telemetry data will be analyzed from the video.
+                    Therefore we can see how each car performs on the track and how they are different from each other.
+                </p>
+            </div>
+
+            <div class="article-section">
+                <h2>Car and Track Selection:</h2>
+                <p>For the performance test, we will conduct time-trial mode with each car at qualifying pace at Baurhin Grand Prix.</p>
+                <p>Baurhin Circuit is one of most balanced track in the calender with 18 turns and 3 DRS zones, 
+                    with a top speed appraoching 330 kmh</p>
+                <p>To minimize the variables, we will apply the setting following to all of the cars.</p>
+                <ul>
+                    <li>Increased Downforce (Preset 2) for car setup.</li>
+                    <li>ERS is disabled, this is automatically in F1 24 time trial mode.</li>
+                    <li>Racing Line assistance is applied</li>
+                    <li>Steering Assist is turned off with brake assist set to low.</li>
+                    <li>Due to the fact the game is played with controller, we will apply Anti-Locking Assist, Traction Control, and Automatic Gear Shifting.
+                    </li>
+                </ul>
+                I will drive each car with 3-5 laps to ensure that I am familiar with each car's characteristics so that I exploit full potential from each car.
+                <p>The best lap time will be recorded for comparison</p>
+            </div>
+
+            <!-- Haas -->
+            <div class="article-section">
+                <h3>Haas</h3>
+                <div class="performance-data">
+                    <div class="data-grid">
+                        <div class="data-item">
+                            <span class="data-label">Lap Time:</span>
+                            <span class="data-value">1:31.210</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Top Speed:</span>
+                            <span class="data-value">325km/h</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Average:</span>
+                            <span class="data-value">211.35km/h</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Sector 1:</span>
+                            <span class="data-value">29.085</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Sector 2:</span>
+                            <span class="data-value">39.390</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Sector 3:</span>
+                            <span class="data-value">22.735</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tabbed Interface for Video and Telemetry -->
+                <div class="media-tabs-container" data-team="haas">
+                    <div class="media-tabs">
+                        <button class="media-tab active" data-tab="video-haas">
+                            Video Analysis
+                        </button>
+                        <button class="media-tab" data-tab="telemetry">
+                            Speed Telemetry
+                        </button>
+                    </div>
+
+                    <div class="media-content">
+                        <div id="video-haas-content" class="tab-content active">
+                            <div style="text-align: center;">
+                                <video controls width="100%" style="max-width: 800px;">
+                                    <source src="videos/Haas.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+
+                        <div id="telemetry-haas-content" class="tab-content">
+                            <div class="telemetry-section">
+                                <div class="telemetry-container">
+                                    <canvas id="telemetryChartHaas"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sauber -->
+            <div class="article-section">
+                <h3>Kick Sauber</h3>
+                <div class="performance-data">
+                    <div class="data-grid">
+                        <div class="data-item">
+                            <span class="data-label">Lap Time:</span>
+                            <span class="data-value">1:30.887</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Top Speed:</span>
+                            <span class="data-value">328km/h</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Average:</span>
+                            <span class="data-value">211.95km/h</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Sector 1:</span>
+                            <span class="data-value">29.191</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Sector 2:</span>
+                            <span class="data-value">39.197</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Sector 3:</span>
+                            <span class="data-value">22.499</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tabbed Interface for Video and Telemetry -->
+                <div class="media-tabs-container" data-team="sauber">
+                    <div class="media-tabs">
+                        <button class="media-tab active" data-tab="video-sauber">
+                            Video Analysis
+                        </button>
+                        <button class="media-tab" data-tab="telemetry">
+                            Speed Telemetry
+                        </button>
+                    </div>
+
+                    <div class="media-content">
+                        <div id="video-sauber-content" class="tab-content active">
+                            <div style="text-align: center;">
+                                <video controls width="100%" style="max-width: 800px;">
+                                    <source src="videos/Sauber.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+
+                        <div id="telemetry-sauber-content" class="tab-content">
+                            <div class="telemetry-section">
+                                <div class="telemetry-container">
+                                    <canvas id="telemetryChartSauber"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Visa Cash APP RB -->
+            <div class="article-section">
+                <h3>Visa Cash APP RB</h3>
+                <div class="performance-data">
+                    <div class="data-grid">
+                        <div class="data-item">
+                            <span class="data-label">Lap Time:</span>
+                            <span class="data-value">1:30.505</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Top Speed:</span>
+                            <span class="data-value">326 km/h</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Average:</span>
+                            <span class="data-value">212.63 km/h</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Sector 1:</span>
+                            <span class="data-value">28.890</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Sector 2:</span>
+                            <span class="data-value">39.083</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Sector 3:</span>
+                            <span class="data-value">22.532</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tabbed Interface for Video and Telemetry -->
+                <div class="media-tabs-container" data-team="rb">
+                    <div class="media-tabs">
+                        <button class="media-tab active" data-tab="video-rb">
+                            <!-- <i class="fas fa-play"></i> -->
+                            Video Analysis
+                        </button>
+                        <button class="media-tab" data-tab="telemetry">
+                            Speed Telemetry
+                        </button>
+                    </div>
+
+                    <div class="media-content">
+                        <div id="video-rb-content" class="tab-content active">
+                            <div style="text-align: center;">
+                                <video controls width="100%" style="max-width: 800px;">
+                                    <source src="videos/RB.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+
+                        <div id="telemetry-rb-content" class="tab-content">
+                            <div class="telemetry-section">
+                                <div class="telemetry-container">
+                                    <canvas id="telemetryChartRB"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Williams -->
+            <div class="article-section">
+                <h3>Williams</h3>
+                <div class="performance-data">
+                    <div class="data-grid">
+                        <div class="data-item">
+                            <span class="data-label">Lap Time:</span>
+                            <span class="data-value">1:30.550</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Top Speed:</span>
+                            <span class="data-value">328 km/h</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Average:</span>
+                            <span class="data-value">212.65 km/h</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Sector 1:</span>
+                            <span class="data-value">28.966</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Sector 2:</span>
+                            <span class="data-value">38.889</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Sector 3:</span>
+                            <span class="data-value">22.695</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tabbed Interface for Video and Telemetry -->
+                <div class="media-tabs-container" data-team="williams">
+                    <div class="media-tabs">
+                        <button class="media-tab active" data-tab="video-williams">
+                            Video Analysis
+                        </button>
+                        <button class="media-tab" data-tab="telemetry">
+                            Speed Telemetry
+                        </button>
+                    </div>
+
+                    <div class="media-content">
+                        <div id="video-williams-content" class="tab-content active">
+                            <div style="text-align: center;">
+                                <video controls width="100%" style="max-width: 800px;">
+                                    <source src="videos/Williams.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+
+                        <div id="telemetry-williams-content" class="tab-content">
+                            <div class="telemetry-section">
+                                <div class="telemetry-container">
+                                    <canvas id="telemetryChartWilliams"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Alpine -->
+            <div class="article-section">
+                <h3>Alpine</h3>
+                <div class="performance-data">
+                    <div class="data-grid">
+                        <div class="data-item">
+                            <span class="data-label">Lap Time:</span>
+                            <span class="data-value">1:30.398</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Top Speed:</span>
+                            <span class="data-value">326 km/h</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Average:</span>
+                            <span class="data-value">213.14 km/h</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Sector 1:</span>
+                            <span class="data-value">28.866</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Sector 2:</span>
+                            <span class="data-value">38.883</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Sector 3:</span>
+                            <span class="data-value">22.649</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tabbed Interface for Video and Telemetry -->
+                <div class="media-tabs-container" data-team="alpine">
+                    <div class="media-tabs">
+                        <button class="media-tab active" data-tab="video-alpine">
+                            Video Analysis
+                        </button>
+                        <button class="media-tab" data-tab="telemetry">
+                            Speed Telemetry
+                        </button>
+                    </div>
+
+                    <div class="media-content">
+                        <div id="video-alpine-content" class="tab-content active">
+                            <div style="text-align: center;">
+                                <video controls width="100%" style="max-width: 800px;">
+                                    <source src="videos/Alpine.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+
+                        <div id="telemetry-alpine-content" class="tab-content">
+                            <div class="telemetry-section">
+                                <div class="telemetry-container">
+                                    <canvas id="telemetryChartAlpine"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Aston Martin -->
+            <div class="article-section">
+                <h3>Aston Martin</h3>
+                <div class="performance-data">
+                    <div class="data-grid">
+                        <div class="data-item">
+                            <span class="data-label">Lap Time:</span>
+                            <span class="data-value">1:29.903</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Top Speed:</span>
+                            <span class="data-value">326 km/h</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Average:</span>
+                            <span class="data-value">214.08 km/h</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Sector 1:</span>
+                            <span class="data-value">28.886</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Sector 2:</span>
+                            <span class="data-value">38.629</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Sector 3:</span>
+                            <span class="data-value">22.388</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tabbed Interface for Video and Telemetry -->
+                <div class="media-tabs-container" data-team="astonmartin">
+                    <div class="media-tabs">
+                        <button class="media-tab active" data-tab="video-astonmartin">
+                            Video Analysis
+                        </button>
+                        <button class="media-tab" data-tab="telemetry">
+                            Speed Telemetry
+                        </button>
+                    </div>
+
+                    <div class="media-content">
+                        <div id="video-astonmartin-content" class="tab-content active">
+                            <div style="text-align: center;">
+                                <video controls width="100%" style="max-width: 800px;">
+                                    <source src="videos/AstonMartin.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+
+                        <div id="telemetry-astonmartin-content" class="tab-content">
+                            <div class="telemetry-section">
+                                <div class="telemetry-container">
+                                    <canvas id="telemetryChartAstonMartin"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mercedes -->
+            <div class="article-section">
+                <h3>Mercedes</h3>
+                <div class="performance-data">
+                    <div class="data-grid">
+                        <div class="data-item">
+                            <span class="data-label">Lap Time:</span>
+                            <span class="data-value">1:29.796</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Top Speed:</span>
+                            <span class="data-value">326 km/h</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Average:</span>
+                            <span class="data-value">214.40 km/h</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Sector 1:</span>
+                            <span class="data-value">28.940</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Sector 2:</span>
+                            <span class="data-value">38.471</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Sector 3:</span>
+                            <span class="data-value">22.385</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tabbed Interface for Video and Telemetry -->
+                <div class="media-tabs-container" data-team="mercedes">
+                    <div class="media-tabs">
+                        <button class="media-tab active" data-tab="video-mercedes">
+                            Video Analysis
+                        </button>
+                        <button class="media-tab" data-tab="telemetry">
+                            Speed Telemetry
+                        </button>
+                    </div>
+
+                    <div class="media-content">
+                        <div id="video-mercedes-content" class="tab-content active">
+                            <div style="text-align: center;">
+                                <video controls width="100%" style="max-width: 800px;">
+                                    <source src="videos/Mercedes.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+
+                        <div id="telemetry-mercedes-content" class="tab-content">
+                            <div class="telemetry-section">
+                                <div class="telemetry-container">
+                                    <canvas id="telemetryChartMercedes"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ferrari -->
+            <div class="article-section">
+                <h3>Ferrari</h3>
+                <div class="performance-data">
+                    <div class="data-grid">
+                        <div class="data-item">
+                            <span class="data-label">Lap Time:</span>
+                            <span class="data-value">1:29.549</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Top Speed:</span>
+                            <span class="data-value">329 km/h</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Average:</span>
+                            <span class="data-value">215.05 km/h</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Sector 1:</span>
+                            <span class="data-value">28.723</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Sector 2:</span>
+                            <span class="data-value">38.531</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Sector 3:</span>
+                            <span class="data-value">22.295</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tabbed Interface for Video and Telemetry -->
+                <div class="media-tabs-container" data-team="ferrari">
+                    <div class="media-tabs">
+                        <button class="media-tab active" data-tab="video-ferrari">
+                            Video Analysis
+                        </button>
+                        <button class="media-tab" data-tab="telemetry">
+                            Speed Telemetry
+                        </button>
+                    </div>
+
+                    <div class="media-content">
+                        <div id="video-ferrari-content" class="tab-content active">
+                            <div style="text-align: center;">
+                                <video controls width="100%" style="max-width: 800px;">
+                                    <source src="videos/Ferrari.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+
+                        <div id="telemetry-ferrari-content" class="tab-content">
+                            <div class="telemetry-section">
+                                <div class="telemetry-container">
+                                    <canvas id="telemetryChartFerrari"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- McLaren -->
+            <div class="article-section">
+                <h3>McLaren</h3>
+                <div class="performance-data">
+                    <div class="data-grid">
+                        <div class="data-item">
+                            <span class="data-label">Lap Time:</span>
+                            <span class="data-value">1:29.887</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Top Speed:</span>
+                            <span class="data-value">328 km/h</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Average:</span>
+                            <span class="data-value">214.93 km/h</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Sector 1:</span>
+                            <span class="data-value">28.827</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Sector 2:</span>
+                            <span class="data-value">38.525</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Sector 3:</span>
+                            <span class="data-value">22.336</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tabbed Interface for Video and Telemetry -->
+                <div class="media-tabs-container" data-team="mclaren">
+                    <div class="media-tabs">
+                        <button class="media-tab active" data-tab="video-mclaren">
+                            Video Analysis
+                        </button>
+                        <button class="media-tab" data-tab="telemetry">
+                            Speed Telemetry
+                        </button>
+                    </div>
+
+                    <div class="media-content">
+                        <div id="video-mclaren-content" class="tab-content active">
+                            <div style="text-align: center;">
+                                <video controls width="100%" style="max-width: 800px;">
+                                    <source src="videos/McLaren.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+
+                        <div id="telemetry-mclaren-content" class="tab-content">
+                            <div class="telemetry-section">
+                                <div class="telemetry-container">
+                                    <canvas id="telemetryChartMcLaren"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Red Bull -->
+            <div class="article-section">
+                <h3>Red Bull</h3>
+                <div class="performance-data">
+                    <div class="data-grid">
+                        <div class="data-item">
+                            <span class="data-label">Lap Time:</span>
+                            <span class="data-value">1:29.489</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Top Speed:</span>
+                            <span class="data-value">329 km/h</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Average:</span>
+                            <span class="data-value">215.16 km/h</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Sector 1:</span>
+                            <span class="data-value">28.689</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Sector 2:</span>
+                            <span class="data-value">38.514</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Sector 3:</span>
+                            <span class="data-value">22.286</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tabbed Interface for Video and Telemetry -->
+                <div class="media-tabs-container" data-team="redbull">
+                    <div class="media-tabs">
+                        <button class="media-tab active" data-tab="video-redbull">
+                            Video Analysis
+                        </button>
+                        <button class="media-tab" data-tab="telemetry">
+                            Speed Telemetry
+                        </button>
+                    </div>
+
+                    <div class="media-content">
+                        <div id="video-redbull-content" class="tab-content active">
+                            <div style="text-align: center;">
+                                <video controls width="100%" style="max-width: 800px;">
+                                    <source src="videos/RedBull.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+
+                        <div id="telemetry-redbull-content" class="tab-content">
+                            <div class="telemetry-section">
+                                <div class="telemetry-container">
+                                    <canvas id="telemetryChartRedBull"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Constructor Comparison -->
+            <!-- <div class="article-section">
+                <h2>Constructor Comparison: Sauber vs Red Bull</h2>
+                 <div class="comparison-intro">
+                    <p>Direct telemetry comparison reveals distinct performance characteristics between Sauber and Red Bull. Red Bull demonstrates superior overall pace and consistency, while Sauber shows competitive performance in specific track sections despite being considered the slowest constructor.</p>
+                </div>
+                
+                <div class="comparison-container" data-comparison="sauber-redbull">
+                    <div class="comparison-header">
+                        <h3>Speed Telemetry Comparison</h3>
+                        <div class="legend">
+                            <div class="legend-item">
+                                <div class="legend-color" style="background-color: #00A550;"></div>
+                                <span>Sauber</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color" style="background-color: #1E3C8C;"></div>
+                                <span>Red Bull</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-chart-container">
+                        <canvas id="comparisonChart"></canvas>
+                    </div>
+                    
+
+                </div>
+            </div>  -->
+
+            <!-- Verstappen vs Red Bull Comparison -->
+            <div class="article-section">
+                <h2>Real vs Game: Verstappen vs Red Bull F1 24</h2>
+                <!-- <div class="comparison-intro">
+                    <p>This unique comparison analyzes Max Verstappen's real-world qualifying telemetry data against the Red Bull car performance in F1 24. The comparison reveals how closely the game simulates real Formula 1 performance characteristics and driving patterns, providing insights into the accuracy of F1 24's physics engine.</p>
+                </div> -->
+                
+                <div class="comparison-container" data-comparison="verstappen-redbull">
+                    <div class="comparison-header">
+                        <h3>Speed Telemetry Comparison</h3>
+                        <div class="legend">
+                            <div class="legend-item">
+                                <div class="legend-color" style="background-color: #FF6D35;"></div>
+                                <span>Verstappen (Real)</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color" style="background-color: #1E3C8C;"></div>
+                                <span>Red Bull (F1 24)</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-chart-container">
+                        <canvas id="verstappenComparisonChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="article-section">
+                <h2>Constructor Performance Analysis</h2>
+                <p>The video above showcases the complete testing process, including:</p>
+                <ul>
+                    <li><strong>Red Bull Racing:</strong> Examining the championship-winning pace</li>
+                    <li><strong>Ferrari:</strong> Testing the Prancing Horse's speed potential</li>
+                    <li><strong>Mercedes:</strong> Analyzing the Silver Arrows' performance</li>
+                    <li><strong>McLaren:</strong> Evaluating the Papaya team's capabilities</li>
+                    <li><strong>Aston Martin:</strong> Testing the green machine's potential</li>
+                    <li><strong>Alpine, Williams, Haas, AlphaTauri, Alfa Romeo:</strong> Complete midfield analysis</li>
+                </ul>
+            </div>
+
+            <div class="article-section">
+                <h2>Key Findings</h2>
+                <p>Through extensive testing, several interesting patterns emerged in F1 24's car performance hierarchy. The game accurately reflects many real-world performance characteristics while adding its own unique balance for competitive gameplay.</p>
+                <p>The most surprising findings came from the midfield battles, where certain constructors showed unexpected pace advantages on specific circuit types. This suggests that F1 24's simulation takes into account car-specific strengths and weaknesses rather than simple overall pace rankings.</p>
+            </div>
+
+            <div class="article-section">
+                <h2>Circuit-Specific Performance</h2>
+                <p>Different circuits revealed varying constructor strengths:</p>
+                <ul>
+                    <li><strong>High-speed circuits:</strong> Favored aerodynamically efficient designs</li>
+                    <li><strong>Technical tracks:</strong> Rewarded cars with superior handling characteristics</li>
+                    <li><strong>Street circuits:</strong> Highlighted mechanical grip advantages</li>
+                </ul>
+            </div> -->
+
+            <!-- <div class="article-section">
+                <h2>Conclusion</h2>
+                <p>F1 24 delivers an authentic and engaging racing experience that accurately reflects the nuanced performance differences between constructors. While some cars clearly dominate overall, the game maintains competitive balance that ensures exciting racing regardless of your constructor choice.</p>
+                <p>Watch the full video analysis above to see detailed lap comparisons, onboard footage from each constructor, and my complete findings from this comprehensive time trial study.</p>
+            </div> -->
+
+            <div class="article-section">
+                <h2>Limitations</h2>
+                <p>While the time-trial analysis provides some valuable insights into F1 24's constructor performance, there are still limitations that need to be recognized:</p>
+                <ul>
+                    <li><strong>Human factors:</strong> I am a human driver with imperfection, so I cannot guarantee the 100% potential of the car is exploited given my driving habits and inconsistency</li>
+                    <li><strong>AntiLock Braking System (ABS) and Traction Control:</strong> Given the fact that the game was played with controller, it is not possible to simulate ABS and traction control
+                    because it is extremely hard to control the depth pressed on pedal and brake.
+                    Therefore, it is also not possible to analyze the throttle and brake of the car.
+                    </li>
+                    <li><strong>Battery Charing System:</strong> The ERS is disabled so that it is not possible to manually control the ERS deploy
+                    maximize the performance.
+                    </li>
+                    <li><strong>Weather conditions:</strong> The game was played in dry conditions only, not accounting for wet weather performance differences</li>
+                    <li><strong>Tyre Wear:</strong> The time-trail is set up with soft tyre under perfect condition, 
+                        we couldn't tell how the tyre wear affects the performance of the car, especially in long distance
+                    </li>
+                </ul>
+            </div>
+
+            <div class="article-section">
+                <h2>References</h2>
+                <ul>
+                    <!-- <li><strong>EA Sports F1 24:</strong> Official game by Codemasters and EA Sports (2024)</li>
+                    <li><strong>Bahrain International Circuit:</strong> Official circuit layout and specifications</li>
+                    <li><strong>Formula 1 Constructor Data:</strong> Team performance statistics and technical specifications</li> -->
+                    <li><strong>Telemetry Analysis Tools:</strong> <a href="https://github.com/Charliemei1112/F124SpeedAnalyzer" target="_blank" rel="noopener">Self-developed F124 Speed Analyzer</li>
+                    <!-- <li><strong>F1 24 Game Settings:</strong> Official game documentation for assist systems and setup options</li> -->
+                    <!-- <li><strong>Max Verstappen's Qualifying Telemetry Data</strong><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener">YouTube</a></strong></li> -->
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <script src="/script.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
