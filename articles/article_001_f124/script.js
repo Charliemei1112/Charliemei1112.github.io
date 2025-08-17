@@ -660,6 +660,21 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         });
+
+        // AUTO-LOAD: If telemetry is the only tab (after removing video), render on page load
+        const hasOnlyTelemetryTab = tabs.length === 1 && tabs[0].getAttribute('data-tab') === 'telemetry';
+        if (hasOnlyTelemetryTab) {
+            // Ensure active classes are set correctly
+            tabs[0].classList.add('active');
+            contents.forEach(c => c.classList.remove('active'));
+            const defaultContent = document.getElementById(`telemetry-${teamKey}-content`) || contents[0];
+            if (defaultContent) defaultContent.classList.add('active');
+            // Draw the chart immediately
+            if (!loadedCharts.has(teamKey)) {
+                loadTelemetryData(teamKey);
+                loadedCharts.add(teamKey);
+            }
+        }
     });
     
     // Initialize comparison chart
