@@ -635,6 +635,70 @@ body {
     transform: translateY(-2px);
 }
 
+/* Form Messages */
+.form-messages {
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    text-align: center;
+    animation: slideIn 0.3s ease-out;
+}
+
+.form-messages.success {
+    background-color: #d1fae5;
+    border: 1px solid #10b981;
+    color: #065f46;
+}
+
+.form-messages.error {
+    background-color: #fee2e2;
+    border: 1px solid #ef4444;
+    color: #991b1b;
+}
+
+.form-messages .email-fallback-link {
+    color: #dc2626;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.form-messages .email-fallback-link:hover {
+    color: #991b1b;
+}
+
+/* Submit Button Loading State */
+.btn-loading {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.fa-spinner {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes slideIn {
+    from { 
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Education Tabs */
 .education-tabs {
     width: 100%; /* Use full width instead of fixed max-width */
